@@ -11,7 +11,6 @@ public class Driver {
 		BankMachine bM;
 		bM = new BankMachine(userAccountNumber, new CurrentAccount(userAccountNumber));
 
-		System.out.println("Account number: " + bM.getAccountNumber());
 		System.out.println(bM.toString());
 	}
 }

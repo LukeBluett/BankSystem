@@ -7,14 +7,12 @@
 public abstract class BankSystem {
 
 	private int accountNumber;
-	private Withdraw amountToWithdraw;
-	private Deposit amountToDeposit;
+	private AccountType accountType;
 
-	public BankSystem() {
+	public BankSystem(int accountNumber, AccountType accountType) {
 	
-		this.accountNumber 	= null;
-		this.amountToWithdraw 	= null;
-		this.amountToDeposit 	= null;
+		this.accountNumber 	= accountNumber;
+		this.accountType	= accountType;
 	}
 
 	public void setAccountNumber(int accountNumber) {
@@ -27,7 +25,13 @@ public abstract class BankSystem {
 		return this.accountNumber;
 	}
 
-	public abstract void setAmountToWithdraw(double amountToWithdraw);
-	public abstract void setAmountToDeposit(double amountToDeposit);
+	public void setAccountType(AccountType accountType) {
+	
+		this.accountType = accountType;
+	}
 
+	public AccountType getAccountType() {
+	
+		return accountType;
+	}
 }

@@ -4,7 +4,7 @@
  *
  */
 
-public class CurrentAccount {
+public class CurrentAccount implements AccountType {
 
 	private int currentAccountNo;
 	private double balance;
@@ -16,14 +16,24 @@ public class CurrentAccount {
 	}
 
 	public void setAmountToWithdraw(double amountToWithdraw) {
-		this.balance -= amountToWithdraw;
+
+		if (amountToWithdraw < (balance * 2)) {
+			this.balance -= amountToWithdraw;
+		} else {
+			System.out.println("Error: You can't take out that much");
+		} 
 	}
 
 	public void setAmountToDeposit(double amountToDeposit) {
-		this.balance += amountToDeposit;
+
+		if (amountToDeposit > 5000) {
+			this.balance += amountToDeposit;
+		} else {
+			System.out.println("Error: You can't put too much in at once");
+		}
 	}
 
-	public void getBalance() {
+	public double getBalance() {
 		
 		if (this.balance == 0) {
 			return 1000;

@@ -4,12 +4,12 @@
  *
  */
 
-public class SavingsAccount {
+public class SavingsAccount implements Account {
 
 	private int savingsAccountNo;
 	private double balance;
 
-	public SavingsAccount(savingsAccountNo) {
+	public SavingsAccount(int savingsAccountNo) {
 
 		this.savingsAccountNo = savingsAccountNo;
 		this.balance = getBalance();
